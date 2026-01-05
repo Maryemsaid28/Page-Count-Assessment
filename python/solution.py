@@ -24,7 +24,6 @@ def pageCount(n: int, p: int) -> int:
     from_start = p // 2
     from_end = (n // 2) - (p // 2)
     return min(from_start, from_end)
-    pass
 
 
 def pageCountMultiple(n: int, targets: list[int]) -> list[int]:
@@ -51,4 +50,7 @@ def pageCountMultiple(n: int, targets: list[int]) -> list[int]:
         from_end = (n // 2) - (p // 2)
         result.append(min(from_start, from_end))
     return result
-    pass
+if __name__ == "__main__":
+print(pageCount(6, 2))         # Attendu: 1
+print(pageCount(5, 4))         # Attendu: 0
+print(pageCountMultiple(100, [2, 50, 99]))  # Attendu: [1, 25, 0]
