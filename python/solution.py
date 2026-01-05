@@ -1,5 +1,4 @@
 # solution.py
-
 def pageCount(n: int, p: int) -> int:
     """
     Calculate the minimum number of pages to turn to reach page `p`
