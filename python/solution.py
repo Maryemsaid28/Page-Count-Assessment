@@ -16,13 +16,11 @@ def pageCount(n: int, p: int) -> int:
         int: Minimum number of page turns required
     """
     # TODO: Implement the logic
-    def pageCount(n: int, p: int) -> int:
-    """
-    Calculate the minimum number of pages to turn to reach page `p`
-    in a book with `n` pages.
-    """
     from_start = p // 2
-    from_end = (n // 2) - (p // 2)
+    if n % 2 == 0:
+        from_end = (n - p + 1) // 2
+    else:
+        from_end = (n - p) // 2
     return min(from_start, from_end)
 
 
@@ -39,15 +37,13 @@ def pageCountMultiple(n: int, targets: list[int]) -> list[int]:
         list[int]: List of minimum page turns for each target page
     """
     # TODO: Implement the logic
-    def pageCountMultiple(n: int, targets: list[int]) -> list[int]:
-    """
-    Calculate the minimum number of pages to turn for multiple target pages
-    in a book with `n` pages.
-    """
     result = []
     for p in targets:
         from_start = p // 2
-        from_end = (n // 2) - (p // 2)
+        if n % 2 == 0:
+            from_end = (n - p + 1) // 2
+        else:
+            from_end = (n - p) // 2
         result.append(min(from_start, from_end))
     return result
 if __name__ == "__main__":
